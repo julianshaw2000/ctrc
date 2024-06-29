@@ -1,0 +1,66 @@
+.containerwa {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 70vh;
+}
+
+.chat-list {
+  overflow-y: auto;
+  border-right: 1px solid #ccc;
+}
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+}
+
+.container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 calc(33.333% - 10px);
+}
+
+.first-card {
+  flex: 2 1 calc(66.666% - 10px);
+}.contact-details {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.contact-details p {
+  margin: 10px 0;
+}
+
+.contact-details a {
+  color: #000;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .card,
+  .first-card {
+    flex: 1 1 100%;
+  }
+}

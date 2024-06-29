@@ -1,0 +1,144 @@
+<mat-toolbar class="toolbar" style="padding: 0">
+  <button (click)="drawer.toggle()" mat-icon-button class="burger">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div>
+    <img
+      class="logoimage"
+      src="assets/logocircle2.png"
+      alt="Home Care"
+      height="80px"
+    />
+  </div>
+
+  <div class="toolBarButton">
+    <button
+      mat-raised-button
+      color="primary"
+      class="biggerbutton"
+      routerLinkActive="mat-accent"
+      routerLink="home"
+    >
+      Home
+    </button>
+  </div>
+
+  <div class="toolBarButton">
+    <button
+      mat-raised-button
+      color="primary"
+      class="biggerbutton"
+      routerLinkActive="mat-accent"
+      routerLink="about"
+    >
+      About
+    </button>
+  </div>
+
+  <div class="toolBarButton">
+    <button
+      mat-raised-button
+      color="primary"
+      class="biggerbutton"
+      routerLinkActive="mat-accent"
+      routerLink="care"
+    >
+      Care
+    </button>
+  </div>
+
+  <div class="toolBarButton">
+    <button
+      mat-raised-button
+      color="primary"
+      class="biggerbutton"
+      routerLinkActive="mat-accent"
+      routerLink="planning"
+    >
+      Planning
+    </button>
+  </div>
+
+  <div class="toolBarButton">
+    <button
+      mat-raised-button
+      color="primary"
+      class="biggerbutton"
+      routerLinkActive="mat-accent"
+      routerLink="forms"
+    >
+      Forms
+    </button>
+  </div>
+
+  <app-search-bar></app-search-bar>
+</mat-toolbar>
+<mat-drawer-container class="container" [hasBackdrop]="mdcBackdrop">
+  <mat-drawer #drawer class="drawer" [mode]="drawerMode">
+    <div class="sidenav-content">
+      <div class="drawerButton">
+        <button
+          (click)="drawer.toggle()"
+          mat-flat-button
+          routerLinkActive="mat-accent"
+          color="primary"
+          routerLink="home"
+        >
+          Home
+        </button>
+      </div>
+
+      <div class="drawerButton">
+        <button
+          (click)="drawer.toggle()"
+          mat-flat-button
+          routerLinkActive="mat-accent"
+          color="primary"
+          routerLink="about"
+        >
+          About
+        </button>
+      </div>
+
+      <div class="drawerButton">
+        <button
+          (click)="drawer.toggle()"
+          mat-flat-button
+          routerLinkActive="mat-accent"
+          color="primary"
+          routerLink="care"
+        >
+          Care
+        </button>
+      </div>
+
+      <div class="drawerButton">
+        <button
+          (click)="drawer.toggle()"
+          mat-flat-button
+          routerLinkActive="mat-accent"
+          color="primary"
+          routerLink="planning"
+        >
+          Planning
+        </button>
+      </div>
+
+      <div class="drawerButton">
+        <button
+          (click)="drawer.toggle()"
+          mat-flat-button
+          routerLinkActive="mat-accent"
+          color="primary"
+          routerLink="forms"
+        >
+          Forms
+        </button>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

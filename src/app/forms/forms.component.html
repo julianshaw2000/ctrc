@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="left-column">
+    <router-outlet> </router-outlet>
+  </div>
+  <div class="right-column">
+    <!-- Buttons in the right column -->
+    <div class="buttons">
+      <button
+        mat-flat-button
+        color="primary"
+        [routerLink]="['/forms/application-form']"
+      >
+        Application Form
+      </button>
+
+      <button mat-flat-button color="primary">Ethnic Forms</button>
+      <button mat-flat-button color="primary">Improvements Form</button>
+      <button mat-flat-button color="primary">Course Form</button>
+    </div>
+  </div>
+</div>

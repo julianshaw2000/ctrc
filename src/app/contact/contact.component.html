@@ -1,0 +1,58 @@
+<div class="container">
+  <mat-card class="card first-card">
+    <mat-card-header>
+      <!-- <mat-card-title>Card 1</mat-card-title> -->
+    </mat-card-header>
+    <mat-card-content>
+      <div class="containerwa">
+        <div class="chat-list">
+          <app-chat-list
+            (chatSelected)="onChatSelected($event)"
+          ></app-chat-list>
+        </div>
+        <div class="chat-window" *ngIf="selectedChat">
+          <app-chat-window [selectedChat]="selectedChat"></app-chat-window>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="card second-card">
+    <mat-card-header>
+      <mat-card-title>Contact Us</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="contact-details">
+        <p>
+          <strong>Contact Details:</strong><br />
+          T: <a href="tel:01895440831">01895 440831</a> | F:
+          <a href="fax:01895420722">01895 420722</a>
+        </p>
+        <p>
+          <strong>Address:</strong><br />
+          Network House<br />
+          Bentinck Court<br />
+          Bentinck Road<br />
+          West Drayton,<br />
+          Middlesex UB7 7RQ
+        </p>
+      </div>
+
+      <div class="business-info">
+        <p>
+          <strong>Business Info:</strong><br />
+          Company No: 7685609<br />
+          CQC Provider ID: 1-331547578
+        </p>
+        <p>
+          <strong>Regulatory Authority:</strong><br />
+          (CQC) Care Quality Commission
+        </p>
+        <!-- <p>
+          <a href="link-to-privacy-policy">Privacy Policy</a>
+        </p> -->
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,116 @@
+<!-- <h2>About</h2> -->
+<div class="container">
+  <div class="left-column">
+    <!-- Content for the left column -->
+
+    <mat-accordion>
+      <mat-expansion-panel
+        [ngClass]="{ panSelect: accSelected == 1 }"
+        hideToggle
+        [expanded]="accSelected == 1"
+        (click)="accSelect(1)"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            <span>About Us</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-defabout></app-defabout>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        [ngClass]="{ panSelect: accSelected == 2 }"
+        hideToggle
+        [expanded]="accSelected == 2"
+        (click)="accSelect(2)"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            <span>What we do</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-whatwedo></app-whatwedo>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        [ngClass]="{ panSelect: accSelected == 3 }"
+        hideToggle
+        [expanded]="accSelected == 3"
+        (click)="accSelect(3)"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            <span>Background and History</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-background></app-background>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        [ngClass]="{ panSelect: accSelected == 4 }"
+        hideToggle
+        [expanded]="accSelected == 4"
+        (click)="accSelect(4)"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            <span>Why we are different</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-different></app-different>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        [ngClass]="{ panSelect: accSelected == 5 }"
+        hideToggle
+        [expanded]="accSelected == 5"
+        (click)="accSelect(5)"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            <span>Range of Services</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-services></app-services>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        [ngClass]="{ panSelect: accSelected == 6 }"
+        hideToggle
+        [expanded]="accSelected == 6"
+        (click)="accSelect(6)"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            <span>Vision</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-vision></app-vision>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="right-column">
+    <!-- Buttons in the right column -->
+    <div class="buttons">
+      <button mat-flat-button (click)="accSelect(1)" color="primary">
+        About Us
+      </button>
+      <button mat-flat-button (click)="accSelect(2)" color="primary">
+        What we do
+      </button>
+      <button mat-flat-button (click)="accSelect(3)" color="primary">
+        Background and History
+      </button>
+      <button mat-flat-button (click)="accSelect(4)" color="primary">
+        Why we are different
+      </button>
+      <button mat-flat-button (click)="accSelect(5)" color="primary">
+        Range of Services
+      </button>
+      <button mat-flat-button (click)="accSelect(6)" color="primary">
+        Vision
+      </button>
+    </div>
+  </div>
+</div>

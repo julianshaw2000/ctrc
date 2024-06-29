@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="left-column">
+    <mat-accordion>
+      <mat-expansion-panel
+        [ngClass]="{ panSelect: accSelected == 1 }"
+        hideToggle
+        [expanded]="accSelected == 1"
+        (click)="accSelect(1)"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            <span>Planning your Support</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-defplan></app-defplan>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        [ngClass]="{ panSelect: accSelected == 2 }"
+        hideToggle
+        [expanded]="accSelected == 2"
+        (click)="accSelect(2)"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            <span>Find Care</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-findcare></app-findcare>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        [ngClass]="{ panSelect: accSelected == 3 }"
+        hideToggle
+        [expanded]="accSelected == 3"
+        (click)="accSelect(3)"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title"> <span>Budget</span> </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-budget></app-budget>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        [ngClass]="{ panSelect: accSelected == 4 }"
+        hideToggle
+        [expanded]="accSelected == 4"
+        (click)="accSelect(4)"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            <span>Frequently asked Questions</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-faq></app-faq>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="right-column">
+    <div class="buttons">
+      <button mat-flat-button (click)="accSelect(1)" color="primary">
+        Planning your Support
+      </button>
+      <button mat-flat-button (click)="accSelect(2)" color="primary">
+        Find Care
+      </button>
+      <button mat-flat-button (click)="accSelect(3)" color="primary">
+        Budget
+      </button>
+      <button mat-flat-button (click)="accSelect(4)" color="primary">
+        Frequently asked Questions
+      </button>
+    </div>
+  </div>
+</div>

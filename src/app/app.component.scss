@@ -1,0 +1,70 @@
+.toolbar {
+    height:20%;
+    background-color: #BF55EC;
+}
+
+.biggerbutton {
+    width:  150px!important;
+    height: 100px!important;
+    font-size: 30px!important;
+}
+
+.toolBarButton, .drawerButton {
+    padding: 20px;
+}
+
+.container {
+    height: 80%;
+}
+
+.drawer {
+    background-color: #BF55EC;
+    width: 200px;
+}
+
+.burger {
+  display:inline;
+    color: white;
+}
+
+
+
+.logoimage{
+  padding-left: 10px;
+  border-radius: 40%; /* Makes the image circular if it's a square */
+
+}
+
+
+
+@media all and (max-width: 500px) {
+
+.logoimage {
+  display: none;
+}
+.burger {
+  display:inline;
+}
+    .toolBarButton {
+        display: none;
+    }
+
+    .toolbar {
+        height:5%;
+    }
+
+    .container {
+        height: 95%;
+    }
+
+}
+
+
+
+@media all and (min-width: 501px) {
+
+
+.burger {
+  display:none;
+}
+}

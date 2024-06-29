@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">WhatsApp Clone</mat-toolbar>
+<mat-list>
+  <mat-list-item *ngFor="let chat of chats" (click)="selectChat(chat)">
+    <img matListAvatar src="https://via.placeholder.com/40" alt="User Avatar" />
+    <div matLine>{{ chat.name }}</div>
+    <div matLine class="mat-line" style="font-size: 12px">
+      {{ chat.lastMessage }}
+    </div>
+  </mat-list-item>
+</mat-list>

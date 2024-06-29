@@ -1,0 +1,56 @@
+.switch-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+
+  button {
+    margin: 0 10px;
+  }
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.container {
+  display: flex;
+ // height: 100vh; /* Full height */
+}
+
+.left-column {
+  flex: 1; /* Grow to fill available space */
+  padding: 20px;
+  overflow-y: auto; /* Scroll if content overflows */
+}
+
+.right-column {
+  width: 200px; /* Fixed width for the right column */
+  padding: 20px;
+  background-color: #f4f4f4; /* Optional: Background color for visibility */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the top */
+  position: relative; /* Establish containing block for sticky positioning */
+}
+
+.buttons {
+  margin-top: 60px; /* Move buttons down by 60px */
+  padding-top: 20px;
+  position: sticky;
+  top: 0; /* Stick from the top of the right column */
+  width: 200px;
+}
+
+button{
+  height:50px;
+}
+
+.right-column button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.panSelect {
+  background-color: lightgrey;
+}

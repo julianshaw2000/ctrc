@@ -1,0 +1,60 @@
+<div class="container mat-elevation-z8">
+  <div class="content">
+    <div
+      [ngStyle]="{
+        'background-image': 'url(' + backgroundImageUrl + ')',
+        'background-size': 'cover',
+        'background-position': 'center',
+        opacity: '0.1'
+      }"
+    ></div>
+
+    <!-- <div
+    class="container mat-elevation-z8"
+    [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
+  > -->
+    <!-- <div class="content"> -->
+    <header>
+      <h1>Welcome to CTRC</h1>
+    </header>
+    <main>
+      <!-- <section>
+        <h4 class="combined-container vision">
+          Our vision is to promote the independence of vulnerable adults by
+          offering daily assistance and help accessing social, leisure and
+          recreational activities in the community; along with support in
+          further education and employment.
+        </h4>
+      </section> -->
+
+      <section>
+        <h4>
+          We are a care organisation that provides care services to adults with
+          a range of disabilities. These include but are not limited to:
+        </h4>
+        <div class="box-container">
+          @for (careIssue of careIssues; track careIssue) {
+          <div class="colored-box">{{ careIssue }}</div>
+          <!--
+          <mat-chip color="primary" class="careIssues">{{
+            vegetable
+          }}</mat-chip> -->
+          }
+        </div>
+        <!--
+        <div class="mobile-container">
+          <ul>
+            @for (careIssue of careIssues; track careIssue) {
+            <li class="flex-list">{{ careIssue }}</li>
+
+            }
+          </ul>
+        </div> -->
+      </section>
+    </main>
+    <!-- </div>
+  <div class="image-container">
+    <img src="hero2.png" alt="Home Care" />
+  </div> -->
+  </div>
+</div>

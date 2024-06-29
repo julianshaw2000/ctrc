@@ -1,0 +1,146 @@
+// .container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   align-items: flex-start;
+//   padding: 20px;
+//   margin: 20px;
+//   background: #fff;
+//   border-radius: 8px;
+// }
+
+// .content {
+//   flex: 1 1 50%;
+//   padding-right: 20px;
+
+// }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  margin: 20px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.content {
+  z-index: 1; /* Ensure content is above the background image */
+  flex: 1 1 50%;
+  padding-right: 20px;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.combined-container {
+    width: 100%;
+    // max-width: 600px;
+    // border: 1px solid #000;
+    padding: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal; /* Ensures text wraps normally */
+}
+
+
+  .image-container {
+    height: 500px;
+    background-color: green;
+    // padding: 30px;
+  }
+
+.careIssues{
+  background-color: blue ;
+  color:aqua;
+}
+
+
+
+        .colored-box {
+            background-color: #ebedf0; /* Light grey background color */
+            border: 2px solid #333; /* Dark grey border */
+            padding: 20px; /* Padding inside the box */
+            margin: 10px; /* Margin outside the box */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            display: inline-block; /* To ensure the box wraps around the text */
+            width: 200px; /* Fixed width for each box */
+            text-align: center; /* Center align text inside the box */
+        }
+
+        .box-container {
+            display: flex; /* Use flexbox for horizontal alignment */
+            justify-content: space-between; /* Space between each box */
+            align-items: center; /* Align items vertically center */
+        }
+
+
+         .flex-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+
+
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 0; /* Ensure background is behind the content */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+
+@media (min-width: 769px) {
+.mobile-container {
+  display: none;
+}
+
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content, .image-container {
+    flex: 1 1 100%;
+    padding: 10px;
+  }
+
+  .content {
+    padding-right: 0;
+  }
+
+  .vision {
+    display: none;
+  }
+
+  .box-container {
+    display: none;
+  }
+}

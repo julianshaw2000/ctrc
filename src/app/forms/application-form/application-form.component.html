@@ -1,0 +1,191 @@
+<form
+  [formGroup]="applicationForm"
+  (ngSubmit)="onSubmit()"
+  class="form-container"
+>
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Date of Application</mat-label>
+      <input
+        matInput
+        formControlName="dateOfApplication"
+        [matDatepicker]="picker1"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Position Applied</mat-label>
+      <input matInput formControlName="positionApplied" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>How many hours do You want to work each week?</mat-label>
+      <input matInput formControlName="hoursPerWeek" type="text" />
+    </mat-form-field>
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Full time / Part time / Bank</mat-label>
+      <mat-select formControlName="workType">
+        <mat-option *ngFor="let type of workTypes" [value]="type">{{
+          type
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label
+        >Days / Night / Mornings / Afternoons / Evenings or Weekends
+        only</mat-label
+      >
+      <mat-select formControlName="workShift">
+        <mat-option *ngFor="let shift of workShifts" [value]="shift">{{
+          shift
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Previous Surname</mat-label>
+      <input matInput formControlName="previousSurname" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Date of Birth</mat-label>
+      <input matInput formControlName="dateOfBirth" [matDatepicker]="picker2" />
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Current Address</mat-label>
+      <input matInput formControlName="currentAddress" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Move In Date</mat-label>
+      <input matInput formControlName="moveInDate" [matDatepicker]="picker3" />
+      <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+      <mat-datepicker #picker3></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Phone Number</mat-label>
+      <input matInput formControlName="phoneNumber" type="text" />
+    </mat-form-field>
+  </div>
+  <div class="form-row">
+    <mat-checkbox formControlName="ownTransport"
+      >Do you have your own transport?</mat-checkbox
+    >
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>License Issued</mat-label>
+      <input
+        matInput
+        formControlName="licenseIssued"
+        [matDatepicker]="picker4"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+      <mat-datepicker #picker4></mat-datepicker>
+    </mat-form-field>
+    <mat-checkbox formControlName="currentDrivingLicense"
+      >Current Driving License</mat-checkbox
+    >
+    <mat-checkbox formControlName="endorsements">Endorsements</mat-checkbox>
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Education</mat-label>
+      <input matInput formControlName="education" type="text" />
+    </mat-form-field>
+  </div>
+  <div formArrayName="employmentHistory">
+    <div
+      *ngFor="let employment of employmentHistory.controls; let i = index"
+      [formGroupName]="i"
+      class="form-row"
+    >
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Employer</mat-label>
+        <input matInput formControlName="employer" type="text" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address" type="text" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>From</mat-label>
+        <input matInput formControlName="from" [matDatepicker]="picker5" />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker5"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker5></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Until</mat-label>
+        <input matInput formControlName="until" [matDatepicker]="picker6" />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker6"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker6></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Position</mat-label>
+        <input matInput formControlName="position" type="text" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Reason for Leaving</mat-label>
+        <input matInput formControlName="reasonForLeaving" type="text" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Salary</mat-label>
+        <input matInput formControlName="salary" type="text" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div formGroupName="nextOfKin" class="form-row">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Relationship</mat-label>
+      <input matInput formControlName="relationship" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Phone Number</mat-label>
+      <input matInput formControlName="phoneNumber" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address" type="text" />
+    </mat-form-field>
+  </div>
+  <div class="form-row">
+    <mat-checkbox formControlName="permissionToWork"
+      >Permission to Work</mat-checkbox
+    >
+    <mat-checkbox formControlName="workPermitRequired"
+      >Work Permit Required</mat-checkbox
+    >
+  </div>
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Special Arrangements</mat-label>
+      <input matInput formControlName="specialArrangements" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Criminal Record</mat-label>
+      <input matInput formControlName="criminalRecord" type="text" />
+    </mat-form-field>
+  </div>
+  <button mat-raised-button type="submit" [disabled]="!applicationForm.valid">
+    Submit
+  </button>
+</form>

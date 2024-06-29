@@ -1,0 +1,39 @@
+.image-container {
+  flex: 1 1 30%;
+  display: flex;
+  justify-content: start;
+  // align-items: center;
+  width: 20%; /* Adjusting the width to a third of the current size */
+}
+
+.images-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Optional: Adjust spacing between images */
+  height: 50%;
+}
+
+.image-container img {
+  width: 100%; /* Ensure the image takes up the full width of its container */
+}
+
+
+img {
+height: 50%;
+width: 50%
+}
+
+@media screen and (max-width: 767px) {
+  .image-container {
+    flex: 1 1 100%;
+    width: 100%; /* On mobile, make the image container full width */
+  }
+
+  .image-container:nth-child(n+2) {
+    display: none;
+  }
+
+  .cards {
+    display:none;
+  }
+}

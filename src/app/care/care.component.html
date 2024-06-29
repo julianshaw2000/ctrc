@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="left-column">
+    <mat-accordion>
+      <mat-expansion-panel
+        *ngFor="let panel of panelData; let i = index"
+        [ngClass]="{ panSelect: accSelected == i + 1 }"
+        hideToggle
+        [expanded]="accSelected == i + 1"
+        (click)="accSelect(i + 1)"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            <h1>{{ panel.title }}</h1>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-container *ngComponentOutlet="panel.component"></ng-container>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="right-column">
+    <div class="buttons">
+      <button
+        mat-flat-button
+        *ngFor="let panel of panelData; let i = index"
+        (click)="accSelect(i + 1)"
+        color="primary"
+      >
+        {{ panel.title }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Buttons to switch between sets if needed -->
+  <!-- <div class="switch-buttons">
+    <button mat-flat-button (click)="switchSet('set1')" color="accent">
+      Set 1
+    </button>
+    <button mat-flat-button (click)="switchSet('set2')" color="accent">
+      Set 2
+    </button>
+    <button mat-flat-button (click)="switchSet('care')" color="accent">
+      Care
+    </button>
+  </div> -->
+</div>

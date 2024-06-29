@@ -1,0 +1,45 @@
+.title {
+  font-size: 1.5em;
+}
+
+.container {
+  display: flex;
+}
+
+.left-column {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.right-column {
+  width: 200px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.buttons {
+  margin-top: 60px;
+  padding-top: 20px;
+  position: sticky;
+  top: 0;
+  width: 200px;
+}
+
+button {
+  height: 50px;
+}
+
+.right-column button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.panSelect {
+  background-color: lightgrey;
+}
